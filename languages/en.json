@@ -1,0 +1,14 @@
+{
+    "OSEAUTONPC": {
+        "npc-button": "Auto NPC",
+        "lawful": "Lawful",
+        "neutral": "Neutral",
+        "chaotic": "Chaotic",
+        "fighter": "Fighter",
+        "cleric": "Cleric",
+        "magicuser": "Magic-User",
+        "thief": "Thief",
+        "form-title": "OSE Auto NPC"
+    }
+
+}
