@@ -65,6 +65,13 @@ export class OseNpc {
     return stats;
   }
 
+  static getThac0Info(interval, level) {
+    const intervalsHit = Math.floor(level / interval);
+    let totalReduction = 2 * intervalsHit;
+    if (intervalsHit > 1) totalReduction++;
+    return 19 - totalReduction;
+  }
+
   static getHpInfo(charClassHd, hdCutoffIncrement, level, con) {
     let hp = 0;
     let conMod = 0;

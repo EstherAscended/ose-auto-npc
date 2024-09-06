@@ -94,6 +94,7 @@ export class Constants {
       compendium: Constants.COMPENDIUMPACKS.FIGHTER,
       name: "fighter",
       maxLevel: 14,
+      thac0ImproveInterval: 3,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -193,6 +194,7 @@ export class Constants {
       compendium: Constants.COMPENDIUMPACKS.THIEF,
       name: "thief",
       maxLevel: 14,
+      thac0ImproveInterval: 4,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -279,6 +281,7 @@ export class Constants {
     magicuser: {
       compendium: Constants.COMPENDIUMPACKS.MAGICUSER,
       name: "magicuser",
+      thac0ImproveInterval: 5,
       maxLevel: 14,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
@@ -338,6 +341,7 @@ export class Constants {
       compendium: Constants.COMPENDIUMPACKS.CLERIC,
       name: "cleric",
       maxLevel: 14,
+      thac0ImproveInterval: 4,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -414,6 +418,7 @@ export class Constants {
       compendium: Constants.COMPENDIUMPACKS.ELF,
       name: "elf",
       maxLevel: 10,
+      thac0ImproveInterval: 3,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,

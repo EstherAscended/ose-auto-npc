@@ -23,6 +23,9 @@ export class OseAutoNpc {
         saves: OseNpc.getSaves(charClass.saves, level),
         hp: OseNpc.getHpInfo(charClass.hd, charClass.hdCutoffIncrement, level, stats["con"]),
         scores: stats,
+        thac0: {
+          value: OseNpc.getThac0Info(charClass.thac0ImproveInterval, level),
+        }
       },
     });
   }
