@@ -10,6 +10,9 @@ export class Constants {
     MAGICUSER: "classicfantasycompendium.abilities-magic-user",
     CLERIC: "classicfantasycompendium.abilities-cleric",
     FIGHTER: "classicfantasycompendium.abilities-fighter",
+    ELF: "classicfantasycompendium.abilities-elf",
+    DWARF: "classicfantasycompendium.abilities-dwarf",
+    HALFLING: "classicfantasycompendium.abilities-halfling",
     WEAPONS: "classicfantasycompendium.equipment-weapons",
     ARMOUR: "classicfantasycompendium.equipment-armour",
     ADVENTURING: "classicfantasycompendium.equipment-adventuring-gear",
@@ -90,6 +93,7 @@ export class Constants {
     fighter: {
       compendium: Constants.COMPENDIUMPACKS.FIGHTER,
       name: "fighter",
+      maxLevel: 14,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -187,6 +191,7 @@ export class Constants {
     thief: {
       compendium: Constants.COMPENDIUMPACKS.THIEF,
       name: "thief",
+      maxLevel: 14,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -272,6 +277,7 @@ export class Constants {
     magicuser: {
       compendium: Constants.COMPENDIUMPACKS.MAGICUSER,
       name: "magicuser",
+      maxLevel: 14,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -328,6 +334,7 @@ export class Constants {
     cleric: {
       compendium: Constants.COMPENDIUMPACKS.CLERIC,
       name: "cleric",
+      maxLevel: 14,
       availableAlignments: [
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
@@ -395,6 +402,98 @@ export class Constants {
             paralysis: { value: 4 },
             breath: { value: 5 },
             spell: { value: 5 },
+          }
+        },
+      ],
+    },
+    elf: {
+      compendium: Constants.COMPENDIUMPACKS.ELF,
+      name: "elf",
+      maxLevel: 10,
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.spear,
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.battleaxe,
+        Constants.WEAPONSMELEE.lance,
+        Constants.WEAPONSMELEE.sword,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.handaxe,
+        Constants.WEAPONSMELEE.staff,
+        Constants.WEAPONSMELEE.shortsword,
+        Constants.WEAPONSMELEE.twohandedsword,
+        Constants.WEAPONSMELEE.dagger,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.shortbow,
+        Constants.WEAPONSRANGED.sling,
+        Constants.WEAPONSRANGED.javelin,
+        Constants.WEAPONSRANGED.longbow,
+        Constants.WEAPONSRANGED.crossbow,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+        Constants.ARMOUR.chainmail,
+        Constants.ARMOUR.platemail,
+      ],
+      canUseShield: true,
+      hd: 6,
+      primeReqList: [
+        {
+          name: "str",
+          index: 0,
+        },
+        {
+          name: "int",
+          index: 1,
+        },
+      ],
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 12 },
+            wand: { value: 13 },
+            paralysis: { value: 13 },
+            breath: { value: 15 },
+            spell: { value: 15 },
+          }
+        },
+        {
+          cutoff: 4,
+          value: {
+            death: { value: 10 },
+            wand: { value: 11 },
+            paralysis: { value: 11 },
+            breath: { value: 13 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 7,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 9 },
+            breath: { value: 10 },
+            spell: { value: 10 },
+          }
+        },
+        {
+          cutoff: 10,
+          value: {
+            death: { value: 6 },
+            wand: { value: 7 },
+            paralysis: { value: 8 },
+            breath: { value: 8 },
+            spell: { value: 8 },
           }
         },
       ],

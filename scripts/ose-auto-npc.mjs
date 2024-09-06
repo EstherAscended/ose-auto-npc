@@ -14,7 +14,7 @@ export class OseAutoNpc {
         details: {
           class: game.i18n.localize(`OSEAUTONPC.${charClass.name}`),
           alignment: game.i18n.localize(`OSEAUTONPC.${OseNpc.getAlignment(charClass.availableAlignments).name}`),
-          level: level,
+          level: level > charClass.maxLevel ? charClass.maxLevel : level,
         },
         retainer: {
           enabled: true,
