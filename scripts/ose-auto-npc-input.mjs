@@ -39,6 +39,10 @@ export class OseAutoNpcInput extends FormApplication {
     );
   }
 
+  async _updateObject(event, formData) {
+    this.render();
+  }
+
   async _handleSendClick(event) {
     OseAutoNpc.generateNPC(
       Constants.CHARCLASSES[this.form.charClass.value],
