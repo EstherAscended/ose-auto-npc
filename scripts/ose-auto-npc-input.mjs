@@ -26,8 +26,21 @@ export class OseAutoNpcInput extends FormApplication {
   }
 
   async getData() {
-    let data = await super.getData();
-    return data;
+    let classes = [];
+    for (const charClass in Constants.CHARCLASSES) {
+        classes.push(
+            {
+                name: Constants.CHARCLASSES[charClass].name,
+                localize: `OSEAUTONPC.${Constants.CHARCLASSES[charClass].name}`,
+            }
+        );
+    }
+
+    classes.sort((a,b) => a.name.localeCompare(b.name));
+    return {
+        charClasses: classes,
+        levelsAvailable: Array.from({ length: 14 }, (_, i) => i + 1)
+    }
   }
 
   activateListeners(html) {
