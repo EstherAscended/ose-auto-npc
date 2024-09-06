@@ -123,6 +123,7 @@ export class Constants {
         Constants.ARMOUR.chainmail,
         Constants.ARMOUR.platemail,
       ],
+      canUseShield: true,
       hd: 8,
       primeReqList: [
         {
@@ -174,6 +175,7 @@ export class Constants {
       availableArmour: [
         Constants.ARMOUR.leather,
       ],
+      canUseShield: false,
       hd: 4,
       primeReqList: [
         {
@@ -206,6 +208,7 @@ export class Constants {
       ],
       availableArmour: [],
       availableWeaponsRanged: [],
+      canUseShield: false,
       hd: 4,
       primeReqList: [
         {
@@ -246,6 +249,7 @@ export class Constants {
         Constants.ARMOUR.chainmail,
         Constants.ARMOUR.platemail,
       ],
+      canUseShield: true,
       hd: 6,
       primeReqList: [
         {

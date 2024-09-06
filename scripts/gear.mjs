@@ -19,6 +19,16 @@ export class Gear {
             gear.push(armour);
         }
 
+        //You can get some weirdness with having two handed weapons and shield.
+        //I might fix that later.
+        if (charClass.canUseShield) {
+            const dieRoll = HelperMethods.diceRoll(100);
+            if (dieRoll <= 33) {
+                const shield = await Gear.getShield();
+                gear.push(shield);
+            }
+        }
+
         const adventuringGear = await Gear.getAdventuringGear(charClass.name);
         return gear.concat(adventuringGear);
     }
@@ -34,6 +44,19 @@ export class Gear {
             system: weapon.system
         }
         return mappedWeapon;
+    }
+
+    static async getShield() {
+        const shieldKey = Constants.ARMOUR.shield;
+
+        const shield = await game.packs.get(Constants.COMPENDIUMPACKS.ARMOUR).getDocument(shieldKey);
+        const mappedShield = {
+            name: shield.name,
+            type: shield.type,
+            img: shield.img,
+            system: shield.system
+        }
+        return mappedShield;
     }
 
     static async getArmour(armours) {
