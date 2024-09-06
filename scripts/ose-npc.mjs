@@ -104,6 +104,10 @@ export class OseNpc {
     };
   }
 
+  static getAlignment(availableAlignments) {
+    return availableAlignments[HelperMethods.diceRoll(availableAlignments.length) - 1];
+  }
+
   static async getClassAbilities(charClass) {
     const abilities = game.packs.get(charClass.compendium);
     const documents = await abilities.getDocuments();
@@ -123,7 +127,4 @@ export class OseNpc {
     return charClass.saves.tier1;
   }
 
-  static getAlignment(charClass) {
-    return game.i18n.localize("OSEAUTONPC.lawful");
-  }
 }

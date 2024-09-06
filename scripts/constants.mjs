@@ -12,10 +12,27 @@ export class Constants {
     FIGHTER: "classicfantasycompendium.abilities-fighter",
   };
 
+  static ALIGNMENTS = {
+    lawful: {
+        name: "lawful"
+    },
+    neutral: {
+        name: "neutral"
+    },
+    chaotic: {
+        name: "chaotic"
+    }
+  }
+
   static CHARCLASSES = {
     fighter: {
       compendium: Constants.COMPENDIUMPACKS.FIGHTER,
       name: "fighter",
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
       hd: 8,
       primeReqList: [
         {
@@ -36,6 +53,11 @@ export class Constants {
     thief: {
       compendium: Constants.COMPENDIUMPACKS.THIEF,
       name: "thief",
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
       hd: 4,
       primeReqList: [
         {
@@ -56,6 +78,11 @@ export class Constants {
     magicuser: {
       compendium: Constants.COMPENDIUMPACKS.MAGICUSER,
       name: "magicuser",
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
       hd: 4,
       primeReqList: [
         {
@@ -76,6 +103,11 @@ export class Constants {
     cleric: {
       compendium: Constants.COMPENDIUMPACKS.CLERIC,
       name: "cleric",
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
       hd: 6,
       primeReqList: [
         {

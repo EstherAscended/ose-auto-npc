@@ -13,7 +13,7 @@ export class OseAutoNpc {
       system: {
         details: {
           class: game.i18n.localize(`OSEAUTONPC.${charClass.name}`),
-          alignment: OseNpc.getAlignment(charClass),
+          alignment: game.i18n.localize(`OSEAUTONPC.${OseNpc.getAlignment(charClass.availableAlignments).name}`),
           level: level,
         },
         retainer: {
