@@ -59,6 +59,33 @@ export class Constants {
     shield: "IdYZfRwcaUq1roXV",
   }
 
+  static ADVENTURINGGEAR = {
+    holywater: "00gPVNNHm6YRbe9p",
+    thieftools: "1pzSds6BeECQSPgx",
+    rope: "6VLgwtvKStUa3xTS",
+    mirror: "8ZID1ekfNgvZycrZ",
+    crowbar: "97hXAAop9n3KxLu7",
+    waterskin: "Ec5rHsIPLK7pp7ps",
+    pole: "FKc2ct1YwxELjIdZ",
+    wolfsbane: "IGQmvVB13WY5QKSY",
+    stakes: "J8vZc8ykJIKXmOmp",
+    rationsstandard: "KXtDnAkucUiVCnIX",
+    backpack: "Kk7hsmmk6kxk7zhs",
+    holysymbol: "QuF0bIGHIUtA1JyU",
+    torch: "SRuHFBRrOcJjLoAt",
+    garlic: "VnJzTjTBVeQz6x8o",
+    tinderbox: "XcCELO7uam0CpZs7",
+    grapplinghook: "XgH3FiR5Yet1Iusu",
+    oilflask: "Y2Z3ua6rcgpZ2qxt",
+    sacksmall: "ZIDDvsptjUwRN1mK",
+    lantern: "cpUaTALrWcZS6o62",
+    rationsiron: "pdz21inLwWv7wyl0",
+    spikes: "r3kJCEcJOAH5pBnc",
+    hammer: "rKfPjJswAflCyaU2",
+    sacklarge: "tdyDafIe9T9lUcv3",
+    wine: "ub6JspwjwLIEMd5g",
+  }
+
   static CHARCLASSES = {
     fighter: {
       compendium: Constants.COMPENDIUMPACKS.FIGHTER,

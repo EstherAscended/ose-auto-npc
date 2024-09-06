@@ -18,14 +18,16 @@ export class Gear {
             const armour = await Gear.getArmour(charClass.availableArmour);
             gear.push(armour);
         }
-        return gear;
+
+        const adventuringGear = await Gear.getAdventuringGear(charClass.name);
+        return gear.concat(adventuringGear);
     }
 
     static async getWeapon(weapons) {
-        let weaponKey = weapons[HelperMethods.diceRoll(weapons.length) - 1];
+        const weaponKey = weapons[HelperMethods.diceRoll(weapons.length) - 1];
 
-        let weapon = await game.packs.get(Constants.COMPENDIUMPACKS.WEAPONS).getDocument(weaponKey);
-        let mappedWeapon = {
+        const weapon = await game.packs.get(Constants.COMPENDIUMPACKS.WEAPONS).getDocument(weaponKey);
+        const mappedWeapon = {
             name: weapon.name,
             type: weapon.type,
             img: weapon.img,
@@ -35,15 +37,54 @@ export class Gear {
     }
 
     static async getArmour(armours) {
-        let armourKey = armours[HelperMethods.diceRoll(armours.length) - 1];
+        const armourKey = armours[HelperMethods.diceRoll(armours.length) - 1];
 
-        let armour = await game.packs.get(Constants.COMPENDIUMPACKS.ARMOUR).getDocument(armourKey);
-        let mappedArmour = {
+        const armour = await game.packs.get(Constants.COMPENDIUMPACKS.ARMOUR).getDocument(armourKey);
+        const mappedArmour = {
             name: armour.name,
             type: armour.type,
             img: armour.img,
             system: armour.system
         }
         return mappedArmour;
+    }
+
+    static async getAdventuringGear(className) {
+        let gearKeys = [];
+
+        gearKeys.push(Constants.ADVENTURINGGEAR.backpack);
+
+        switch(className) {
+            case Constants.CHARCLASSES.cleric.name:
+                gearKeys.push(Constants.ADVENTURINGGEAR.holysymbol);
+                break;
+            case Constants.CHARCLASSES.thief.name:
+                gearKeys.push(Constants.ADVENTURINGGEAR.thieftools);
+                break;
+        }
+
+        //This means characters might end up with multiple backpacks or other default items. I kind of like that.
+        Object.keys(Constants.ADVENTURINGGEAR).forEach(key => {
+            const diceRoll = HelperMethods.diceRoll(10);
+            if (diceRoll === 10) gearKeys.push(Constants.ADVENTURINGGEAR[key]);
+        });
+
+        const gearPack = game.packs.get(Constants.COMPENDIUMPACKS.ADVENTURING);
+        let gear = [];
+
+        for (let i = 0; i < gearKeys.length; i++) {
+            const gearItem = await gearPack.getDocument(gearKeys[i]);
+
+            const mappedItem = {
+                name: gearItem.name,
+                type: gearItem.type,
+                img: gearItem.img,
+                system: gearItem.system
+            }
+
+            gear.push(mappedItem);
+        }
+
+        return gear;
     }
 }
