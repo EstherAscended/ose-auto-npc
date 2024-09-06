@@ -65,7 +65,7 @@ export class OseNpc {
     return stats;
   }
 
-  static getHpInfo(charClassHd, level, con) {
+  static getHpInfo(charClassHd, hdCutoffIncrement, level, con) {
     let hp = 0;
     let conMod = 0;
 
@@ -94,12 +94,19 @@ export class OseNpc {
     }
 
     for (let i = 0; i < level; i++) {
-      hp += HelperMethods.diceRoll(charClassHd) + conMod;
-      if (hp < 1) hp = 1;
+        if (i < 9) {
+            let rolledHp = HelperMethods.diceRoll(charClassHd) + conMod;
+            if (rolledHp < 1) rolledHp = 1;
+            hp += rolledHp;
+        } else {
+            hp += hdCutoffIncrement;
+        }
     }
 
+    const hdString = level <= 9 ? `${level}d${charClassHd}` : `9d${charClassHd}+${hdCutoffIncrement * (level - 9)}`
+
     return {
-      hd: `${level}d${charClassHd}`,
+      hd: hdString,
       max: hp,
       value: hp,
     };

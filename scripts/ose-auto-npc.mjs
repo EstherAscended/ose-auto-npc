@@ -21,7 +21,7 @@ export class OseAutoNpc {
           loyalty: 7,
         },
         saves: OseNpc.getSaves(charClass.saves, level),
-        hp: OseNpc.getHpInfo(charClass.hd, level, stats["con"]),
+        hp: OseNpc.getHpInfo(charClass.hd, charClass.hdCutoffIncrement, level, stats["con"]),
         scores: stats,
       },
     });

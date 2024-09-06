@@ -129,6 +129,7 @@ export class Constants {
       ],
       canUseShield: true,
       hd: 8,
+      hdCutoffIncrement: 2,
       primeReqList: [
         {
           name: "str",
@@ -225,6 +226,7 @@ export class Constants {
       ],
       canUseShield: false,
       hd: 4,
+      hdCutoffIncrement: 2,
       primeReqList: [
         {
           name: "dex",
@@ -292,6 +294,7 @@ export class Constants {
       availableWeaponsRanged: [],
       canUseShield: false,
       hd: 4,
+      hdCutoffIncrement: 1,
       primeReqList: [
         {
           name: "int",
@@ -357,6 +360,7 @@ export class Constants {
       ],
       canUseShield: true,
       hd: 6,
+      hdCutoffIncrement: 1,
       primeReqList: [
         {
           name: "wis",
@@ -445,6 +449,7 @@ export class Constants {
       ],
       canUseShield: true,
       hd: 6,
+      hdCutoffIncrement: 2,
       primeReqList: [
         {
           name: "str",
