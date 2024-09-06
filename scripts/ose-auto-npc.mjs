@@ -9,7 +9,7 @@ export class OseAutoNpc {
       name: name,
       type: "character",
       img: "icons/svg/mystery-man.svg",
-      items: await OseNpc.getClassAbilities(charClass),
+      items: await OseNpc.getGearAndClassAbilities(charClass),
       system: {
         details: {
           class: game.i18n.localize(`OSEAUTONPC.${charClass.name}`),

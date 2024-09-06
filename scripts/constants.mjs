@@ -10,6 +10,9 @@ export class Constants {
     MAGICUSER: "classicfantasycompendium.abilities-magic-user",
     CLERIC: "classicfantasycompendium.abilities-cleric",
     FIGHTER: "classicfantasycompendium.abilities-fighter",
+    WEAPONS: "classicfantasycompendium.equipment-weapons",
+    ARMOUR: "classicfantasycompendium.equipment-armour",
+    ADVENTURING: "classicfantasycompendium.equipment-adventuring-gear",
   };
 
   static ALIGNMENTS = {
@@ -24,6 +27,38 @@ export class Constants {
     }
   }
 
+  static WEAPONSMELEE = {
+    spear: "2KT2MPd8XQvSqFzY",
+    polearm: "6sigc3caYw0EAxov",
+    silverdagger: "8XrJM94weLAggBMH",
+    warhammer: "Dt9pHNnMccB5gf5t",
+    mace: "RmgLtMKfD9gp2VuA",
+    battleaxe: "TSefN1YwasWk3C33",
+    lance: "W4Ew6Y8yWMhyMKcw",
+    sword: "ao0TnCtDRc7j2cgH",
+    club: "enUmfq78M7VYbjlI",
+    handaxe: "gWoFtRBZVhD7Mn1u",
+    staff: "jHp1OxCGmaX8L9Oq",
+    shortsword: "qwvWgV1TXktyjo7Z",
+    twohandedsword: "vqMuPOYGfK8q1MkH",
+    dagger: "xbHwMIT3yltfNyDA",
+  }
+
+  static WEAPONSRANGED = {
+    shortbow: "SrdLQTgrRnMEubDV",
+    sling: "bEkUiPKsDHQ0QfTU",
+    javelin: "eubog3nXYtIu9G4n",
+    longbow: "exFR5KNnamClFlkH",
+    crossbow: "tfXZNnu2Wur25hBs",
+  }
+
+  static ARMOUR = {
+    leather: "b5tbL2UaqtpvdMAv",
+    chainmail: "Fz8pG8FPvTadAlVG",
+    platemail: "7iWthUf8FGPFykNc",
+    shield: "IdYZfRwcaUq1roXV",
+  }
+
   static CHARCLASSES = {
     fighter: {
       compendium: Constants.COMPENDIUMPACKS.FIGHTER,
@@ -32,6 +67,34 @@ export class Constants {
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
         Constants.ALIGNMENTS.chaotic
+      ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.spear,
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.battleaxe,
+        Constants.WEAPONSMELEE.lance,
+        Constants.WEAPONSMELEE.sword,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.handaxe,
+        Constants.WEAPONSMELEE.staff,
+        Constants.WEAPONSMELEE.shortsword,
+        Constants.WEAPONSMELEE.twohandedsword,
+        Constants.WEAPONSMELEE.dagger,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.shortbow,
+        Constants.WEAPONSRANGED.sling,
+        Constants.WEAPONSRANGED.javelin,
+        Constants.WEAPONSRANGED.longbow,
+        Constants.WEAPONSRANGED.crossbow,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+        Constants.ARMOUR.chainmail,
+        Constants.ARMOUR.platemail,
       ],
       hd: 8,
       primeReqList: [
@@ -58,6 +121,32 @@ export class Constants {
         Constants.ALIGNMENTS.neutral,
         Constants.ALIGNMENTS.chaotic
       ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.spear,
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.battleaxe,
+        Constants.WEAPONSMELEE.lance,
+        Constants.WEAPONSMELEE.sword,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.handaxe,
+        Constants.WEAPONSMELEE.staff,
+        Constants.WEAPONSMELEE.shortsword,
+        Constants.WEAPONSMELEE.twohandedsword,
+        Constants.WEAPONSMELEE.dagger,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.shortbow,
+        Constants.WEAPONSRANGED.sling,
+        Constants.WEAPONSRANGED.javelin,
+        Constants.WEAPONSRANGED.longbow,
+        Constants.WEAPONSRANGED.crossbow,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+      ],
       hd: 4,
       primeReqList: [
         {
@@ -83,6 +172,13 @@ export class Constants {
         Constants.ALIGNMENTS.neutral,
         Constants.ALIGNMENTS.chaotic
       ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.dagger,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.staff
+      ],
+      availableArmour: [],
+      availableWeaponsRanged: [],
       hd: 4,
       primeReqList: [
         {
@@ -107,6 +203,21 @@ export class Constants {
         Constants.ALIGNMENTS.lawful,
         Constants.ALIGNMENTS.neutral,
         Constants.ALIGNMENTS.chaotic
+      ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.staff,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.sling,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+        Constants.ARMOUR.chainmail,
+        Constants.ARMOUR.platemail,
       ],
       hd: 6,
       primeReqList: [

@@ -1,4 +1,5 @@
 import { HelperMethods } from "./constants.mjs";
+import { Gear } from "./gear.mjs";
 
 export class OseNpc {
   static getStats(primeReqList) {
@@ -106,6 +107,13 @@ export class OseNpc {
 
   static getAlignment(availableAlignments) {
     return availableAlignments[HelperMethods.diceRoll(availableAlignments.length) - 1];
+  }
+
+  static async getGearAndClassAbilities(charClass) {
+    let abilities = await OseNpc.getClassAbilities(charClass);
+    let gear = await Gear.getGear(charClass);
+
+    return abilities.concat(gear);
   }
 
   static async getClassAbilities(charClass) {
