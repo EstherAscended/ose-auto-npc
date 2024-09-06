@@ -131,8 +131,18 @@ export class OseNpc {
     return mappedDocuments;
   }
 
-  static getSaves(charClass, level) {
-    return charClass.saves.tier1;
-  }
+  static getSaves(saves, level) {
+    let returnedSaves = null;
 
+    for (const saveObject of saves) {
+        if (level >= saveObject.cutoff) {
+            returnedSaves = saveObject.value;
+            continue;
+        } else {
+            break;
+        }
+    }
+
+    return returnedSaves;
+  }
 }

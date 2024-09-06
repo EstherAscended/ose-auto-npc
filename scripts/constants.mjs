@@ -131,15 +131,58 @@ export class Constants {
           index: 0,
         },
       ],
-      saves: {
-        tier1: {
-          death: { value: 12 },
-          wand: { value: 13 },
-          paralysis: { value: 14 },
-          breath: { value: 15 },
-          spell: { value: 16 },
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 12 },
+            wand: { value: 13 },
+            paralysis: { value: 14 },
+            breath: { value: 15 },
+            spell: { value: 16 },
+          }
         },
-      },
+        {
+          cutoff: 4,
+          value: {
+            death: { value: 10 },
+            wand: { value: 11 },
+            paralysis: { value: 12 },
+            breath: { value: 13 },
+            spell: { value: 14 },
+          }
+        },
+        {
+          cutoff: 7,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 10 },
+            breath: { value: 10 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 10,
+          value: {
+            death: { value: 6 },
+            wand: { value: 7 },
+            paralysis: { value: 8 },
+            breath: { value: 8 },
+            spell: { value: 10 },
+          }
+        },
+        {
+          cutoff: 13,
+          value: {
+            death: { value: 4 },
+            wand: { value: 5 },
+            paralysis: { value: 6 },
+            breath: { value: 5 },
+            spell: { value: 8 },
+          }
+        },
+      ],
     },
     thief: {
       compendium: Constants.COMPENDIUMPACKS.THIEF,
@@ -183,15 +226,48 @@ export class Constants {
           index: 3,
         },
       ],
-      saves: {
-        tier1: {
-          death: { value: 13 },
-          wand: { value: 14 },
-          paralysis: { value: 13 },
-          breath: { value: 16 },
-          spell: { value: 15 },
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 13 },
+            wand: { value: 14 },
+            paralysis: { value: 13 },
+            breath: { value: 16 },
+            spell: { value: 15 },
+          }
         },
-      },
+        {
+          cutoff: 5,
+          value: {
+            death: { value: 12 },
+            wand: { value: 13 },
+            paralysis: { value: 11 },
+            breath: { value: 14 },
+            spell: { value: 13 },
+          }
+        },
+        {
+          cutoff: 9,
+          value: {
+            death: { value: 10 },
+            wand: { value: 11 },
+            paralysis: { value: 9 },
+            breath: { value: 12 },
+            spell: { value: 10 },
+          }
+        },
+        {
+          cutoff: 13,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 7 },
+            breath: { value: 10 },
+            spell: { value: 8 },
+          }
+        },
+      ],
     },
     magicuser: {
       compendium: Constants.COMPENDIUMPACKS.MAGICUSER,
@@ -216,15 +292,38 @@ export class Constants {
           index: 1,
         },
       ],
-      saves: {
-        tier1: {
-          death: { value: 13 },
-          wand: { value: 14 },
-          paralysis: { value: 13 },
-          breath: { value: 16 },
-          spell: { value: 15 },
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 13 },
+            wand: { value: 14 },
+            paralysis: { value: 13 },
+            breath: { value: 16 },
+            spell: { value: 15 },
+          }
         },
-      },
+        {
+          cutoff: 6,
+          value: {
+            death: { value: 11 },
+            wand: { value: 12 },
+            paralysis: { value: 11 },
+            breath: { value: 13 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 11,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 8 },
+            breath: { value: 11 },
+            spell: { value: 8 },
+          }
+        },
+      ],
     },
     cleric: {
       compendium: Constants.COMPENDIUMPACKS.CLERIC,
@@ -257,15 +356,48 @@ export class Constants {
           index: 2,
         },
       ],
-      saves: {
-        tier1: {
-          death: { value: 11 },
-          wand: { value: 12 },
-          paralysis: { value: 14 },
-          breath: { value: 16 },
-          spell: { value: 15 },
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 11 },
+            wand: { value: 12 },
+            paralysis: { value: 14 },
+            breath: { value: 16 },
+            spell: { value: 15 },
+          }
         },
-      },
+        {
+          cutoff: 5,
+          value: {
+            death: { value: 9 },
+            wand: { value: 10 },
+            paralysis: { value: 12 },
+            breath: { value: 14 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 9,
+          value: {
+            death: { value: 6 },
+            wand: { value: 7 },
+            paralysis: { value: 9 },
+            breath: { value: 11 },
+            spell: { value: 9 },
+          }
+        },
+        {
+          cutoff: 13,
+          value: {
+            death: { value: 3 },
+            wand: { value: 5 },
+            paralysis: { value: 4 },
+            breath: { value: 5 },
+            spell: { value: 5 },
+          }
+        },
+      ],
     },
   };
 

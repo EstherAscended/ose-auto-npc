@@ -20,7 +20,7 @@ export class OseAutoNpc {
           enabled: true,
           loyalty: 7,
         },
-        saves: OseNpc.getSaves(charClass, level),
+        saves: OseNpc.getSaves(charClass.saves, level),
         hp: OseNpc.getHpInfo(charClass.hd, level, stats["con"]),
         scores: stats,
       },
