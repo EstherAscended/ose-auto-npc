@@ -34,5 +34,8 @@
     "scripts/ose-auto-npc.mjs"
   ],
   "version": "1",
-  "minimumCoreVersion": "0.8.8"
+  "minimumCoreVersion": "0.8.8",
+  "url": "https://github.com/EstherAscended/ose-auto-npc",
+  "manifest": "https://raw.githubusercontent.com/EstherAscended/ose-auto-npc/master/module.json",
+  "download": "https://github.com/EstherAscended/ose-auto-npc/archive/refs/heads/master.zip"
 }
