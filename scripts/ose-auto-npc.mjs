@@ -42,13 +42,16 @@ Hooks.on("getActorDirectoryEntryContext", (app, entryOptions) => {
   } catch {
     buttons = app.find(`[class="header-actions action-buttons flexrow"]`);
   }
-  var button = document.createElement("button");
-  button.classList = ["ose-auto-npc-button"];
-  button.innerHTML = game.i18n.localize("OSEAUTONPC.npc-button");
 
-  button.addEventListener("click", function () {
-    Constants.mainInput.render(true, { userId: game.userId });
-  });
+  if(game.user.isGM) {
+    var button = document.createElement("button");
+    button.classList = ["ose-auto-npc-button"];
+    button.innerHTML = game.i18n.localize("OSEAUTONPC.npc-button");
 
-  buttons.append(button);
+    button.addEventListener("click", function () {
+      Constants.mainInput.render(true, { userId: game.userId });
+    });
+
+    buttons.append(button);
+  }
 });
