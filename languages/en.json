@@ -7,6 +7,8 @@
         "fighter": "Fighter",
         "cleric": "Cleric",
         "elf": "Elf",
+        "dwarf": "Dwarf",
+        "halfling": "Halfling",
         "magicuser": "Magic-User",
         "thief": "Thief",
         "form-title": "OSE Auto NPC"

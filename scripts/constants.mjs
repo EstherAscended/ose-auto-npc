@@ -508,6 +508,176 @@ export class Constants {
         },
       ],
     },
+    dwarf: {
+      compendium: Constants.COMPENDIUMPACKS.DWARF,
+      name: "dwarf",
+      maxLevel: 12,
+      thac0ImproveInterval: 3,
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.spear,
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.battleaxe,
+        Constants.WEAPONSMELEE.lance,
+        Constants.WEAPONSMELEE.sword,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.handaxe,
+        Constants.WEAPONSMELEE.staff,
+        Constants.WEAPONSMELEE.shortsword,
+        Constants.WEAPONSMELEE.dagger,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.shortbow,
+        Constants.WEAPONSRANGED.sling,
+        Constants.WEAPONSRANGED.javelin,
+        Constants.WEAPONSRANGED.crossbow,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+        Constants.ARMOUR.chainmail,
+        Constants.ARMOUR.platemail,
+      ],
+      canUseShield: true,
+      hd: 8,
+      hdCutoffIncrement: 3,
+      primeReqList: [
+        {
+          name: "str",
+          index: 0,
+        },
+      ],
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 10 },
+            breath: { value: 13 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 4,
+          value: {
+            death: { value: 6 },
+            wand: { value: 7 },
+            paralysis: { value: 8 },
+            breath: { value: 10 },
+            spell: { value: 10 },
+          }
+        },
+        {
+          cutoff: 7,
+          value: {
+            death: { value: 4 },
+            wand: { value: 5 },
+            paralysis: { value: 6 },
+            breath: { value: 7 },
+            spell: { value: 8 },
+          }
+        },
+        {
+          cutoff: 10,
+          value: {
+            death: { value: 2 },
+            wand: { value: 3 },
+            paralysis: { value: 4 },
+            breath: { value: 4 },
+            spell: { value: 6 },
+          }
+        },
+      ],
+    },
+    halfling: {
+      compendium: Constants.COMPENDIUMPACKS.HALFLING,
+      name: "halfling",
+      maxLevel: 8,
+      thac0ImproveInterval: 3,
+      availableAlignments: [
+        Constants.ALIGNMENTS.lawful,
+        Constants.ALIGNMENTS.neutral,
+        Constants.ALIGNMENTS.chaotic
+      ],
+      availableWeaponsMelee: [
+        Constants.WEAPONSMELEE.spear,
+        Constants.WEAPONSMELEE.polearm,
+        Constants.WEAPONSMELEE.silverdagger,
+        Constants.WEAPONSMELEE.warhammer,
+        Constants.WEAPONSMELEE.mace,
+        Constants.WEAPONSMELEE.battleaxe,
+        Constants.WEAPONSMELEE.lance,
+        Constants.WEAPONSMELEE.sword,
+        Constants.WEAPONSMELEE.club,
+        Constants.WEAPONSMELEE.handaxe,
+        Constants.WEAPONSMELEE.staff,
+        Constants.WEAPONSMELEE.shortsword,
+        Constants.WEAPONSMELEE.dagger,
+      ],
+      availableWeaponsRanged: [
+        Constants.WEAPONSRANGED.shortbow,
+        Constants.WEAPONSRANGED.sling,
+        Constants.WEAPONSRANGED.javelin,
+        Constants.WEAPONSRANGED.crossbow,
+      ],
+      availableArmour: [
+        Constants.ARMOUR.leather,
+        Constants.ARMOUR.chainmail,
+        Constants.ARMOUR.platemail,
+      ],
+      canUseShield: true,
+      hd: 6,
+      hdCutoffIncrement: 0,
+      primeReqList: [
+        {
+          name: "dex",
+          index: 3,
+        },
+        {
+          name: "str",
+          index: 0,
+        },
+      ],
+      saves: [
+        {
+          cutoff: 1,
+          value: {
+            death: { value: 8 },
+            wand: { value: 9 },
+            paralysis: { value: 10 },
+            breath: { value: 13 },
+            spell: { value: 12 },
+          }
+        },
+        {
+          cutoff: 4,
+          value: {
+            death: { value: 6 },
+            wand: { value: 7 },
+            paralysis: { value: 8 },
+            breath: { value: 10 },
+            spell: { value: 10 },
+          }
+        },
+        {
+          cutoff: 7,
+          value: {
+            death: { value: 4 },
+            wand: { value: 5 },
+            paralysis: { value: 6 },
+            breath: { value: 7 },
+            spell: { value: 8 },
+          }
+        },
+      ],
+    },
   };
 
   static initialize() {
