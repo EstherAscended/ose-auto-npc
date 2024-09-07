@@ -36,7 +36,12 @@ Hooks.once("init", () => {
 });
 
 Hooks.on("getActorDirectoryEntryContext", (app, entryOptions) => {
-  const buttons = app.element.find(`[class="header-actions action-buttons flexrow"]`);
+  let buttons = null;
+  try {
+    buttons = app.element.find(`[class="header-actions action-buttons flexrow"]`);
+  } catch {
+    buttons = app.find(`[class="header-actions action-buttons flexrow"]`);
+  }
   var button = document.createElement("button");
   button.classList = ["ose-auto-npc-button"];
   button.innerHTML = game.i18n.localize("OSEAUTONPC.npc-button");
