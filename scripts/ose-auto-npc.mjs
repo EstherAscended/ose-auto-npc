@@ -5,11 +5,14 @@ export class OseAutoNpc {
   static async generateNPC(charClass, name, level) {
     let stats = OseNpc.getStats(charClass.primeReqList);
 
+    //We need to add the spells to items so they show on the sheet
+    const spellDetails = await OseNpc.getSpells(charClass.spells, level);
+
     let actor = await Actor.create({
       name: name,
       type: "character",
       img: "icons/svg/mystery-man.svg",
-      items: await OseNpc.getGearAndClassAbilities(charClass),
+      items: (await OseNpc.getGearAndClassAbilities(charClass, spellDetails)),
       system: {
         details: {
           class: game.i18n.localize(`OSEAUTONPC.${charClass.name}`),
@@ -20,6 +23,7 @@ export class OseAutoNpc {
           enabled: true,
           loyalty: 7,
         },
+        spells: spellDetails,
         saves: OseNpc.getSaves(charClass.saves, level),
         hp: OseNpc.getHpInfo(charClass.hd, charClass.hdCutoffIncrement, level, stats["con"]),
         scores: stats,

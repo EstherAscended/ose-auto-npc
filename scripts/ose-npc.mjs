@@ -1,4 +1,4 @@
-import { HelperMethods } from "./constants.mjs";
+import { Constants, HelperMethods } from "./constants.mjs";
 import { Gear } from "./gear.mjs";
 
 export class OseNpc {
@@ -123,11 +123,17 @@ export class OseNpc {
     return availableAlignments[HelperMethods.diceRoll(availableAlignments.length) - 1];
   }
 
-  static async getGearAndClassAbilities(charClass) {
-    let abilities = await OseNpc.getClassAbilities(charClass);
-    let gear = await Gear.getGear(charClass);
+  static async getGearAndClassAbilities(charClass, spellDetails) {
+    const abilities = await OseNpc.getClassAbilities(charClass);
+    const gear = await Gear.getGear(charClass);
 
-    return abilities.concat(gear);
+    let spells = [];
+    for (let i = 0; i < 6; i++) {
+        if (spellDetails.spellList[i]) spells = spells.concat(spellDetails.spellList[i]);
+    }
+
+    const fullList = abilities.concat(gear).concat(spells);
+    return fullList;
   }
 
   static async getClassAbilities(charClass) {
@@ -159,4 +165,64 @@ export class OseNpc {
 
     return returnedSaves;
   }
+
+  static async getSpells(spellDetails, level) {
+    let spells = {
+        enabled: false,
+    }
+
+    if (spellDetails.castingType !== Constants.CASTINGTYPE.none) {
+        const spellPack = game.packs.get(Constants.COMPENDIUMPACKS.SPELLS);
+        const spellTypeFilter = spellDetails.castingType === Constants.CASTINGTYPE.arcane ? "MU" : "C";
+        const spellListFullIndex = spellPack.index.filter(e => e.name.startsWith(spellTypeFilter));
+        spells.enabled = true;
+        spells.slots = {
+            1: {used: 0, max: spellDetails.spellsKnown[level - 1][0]},
+            2: {used: 0, max: spellDetails.spellsKnown[level - 1][1]},
+            3: {used: 0, max: spellDetails.spellsKnown[level - 1][2]},
+            4: {used: 0, max: spellDetails.spellsKnown[level - 1][3]},
+            5: {used: 0, max: spellDetails.spellsKnown[level - 1][4]},
+            6: {used: 0, max: spellDetails.spellsKnown[level - 1][5]},
+        }
+
+        let spellList = [[],[],[],[],[],[]];
+
+        for (let i = 0; i < spellList.length; i++) {
+            if (spellDetails.spellsKnown[level - 1][i] > 0) {
+                const levelSpellListIndex = spellListFullIndex.filter(spell => {
+                    return spell.name.startsWith(`${spellTypeFilter}${i+1}`);
+                })
+
+                let pickedSpellsIndex = [];
+
+                for (let j = 0; j < spellDetails.spellsKnown[level - 1][i]; j++) {
+                    const spellIndex = HelperMethods.diceRoll(levelSpellListIndex.length) - 1;
+                    pickedSpellsIndex.push(levelSpellListIndex[spellIndex]);
+                }
+
+                for (let n = 0; n < pickedSpellsIndex.length; n++) {
+                    const spellToAdd = await spellPack.getDocument(pickedSpellsIndex[n]._id);
+                    spellList[i].push(
+                        {
+                            name: spellToAdd.name,
+                            type: spellToAdd.type,
+                            system: spellToAdd.system,
+                            img: spellToAdd.img,
+                        }
+                    );
+                }
+            }
+        }
+        spells.spellList = {
+            1: spellList[0],
+            2: spellList[1],
+            3: spellList[2],
+            4: spellList[3],
+            5: spellList[4],
+            6: spellList[5],
+        }
+    }
+    return spells;
+  }
+
 }

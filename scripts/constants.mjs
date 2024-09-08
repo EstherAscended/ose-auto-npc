@@ -16,6 +16,7 @@ export class Constants {
     WEAPONS: "classicfantasycompendium.equipment-weapons",
     ARMOUR: "classicfantasycompendium.equipment-armour",
     ADVENTURING: "classicfantasycompendium.equipment-adventuring-gear",
+    SPELLS: "classicfantasycompendium.spells",
   };
 
   static ALIGNMENTS = {
@@ -28,6 +29,12 @@ export class Constants {
     chaotic: {
         name: "chaotic"
     }
+  }
+
+  static CASTINGTYPE = {
+    none: "none",
+    arcane: "arcane",
+    divine: "divine",
   }
 
   static WEAPONSMELEE = {
@@ -137,6 +144,10 @@ export class Constants {
           index: 0,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.none,
+        spellsKnown: null,
+      },
       saves: [
         {
           cutoff: 1,
@@ -235,6 +246,10 @@ export class Constants {
           index: 3,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.none,
+        spellsKnown: null,
+      },
       saves: [
         {
           cutoff: 1,
@@ -304,6 +319,25 @@ export class Constants {
           index: 1,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.arcane,
+        spellsKnown: [
+          [1,0,0,0,0,0],
+          [2,0,0,0,0,0],
+          [2,1,0,0,0,0],
+          [2,2,0,0,0,0],
+          [2,2,1,0,0,0],
+          [2,2,2,0,0,0],
+          [3,2,2,1,0,0],
+          [3,3,2,2,0,0],
+          [3,3,3,2,1,0],
+          [3,3,3,3,2,0],
+          [4,3,3,3,2,1],
+          [4,4,3,3,3,2],
+          [4,4,4,3,3,3],
+          [4,4,4,4,3,3],
+        ],
+      },
       saves: [
         {
           cutoff: 1,
@@ -371,6 +405,25 @@ export class Constants {
           index: 2,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.divine,
+        spellsKnown: [
+          [0,0,0,0,0,0],
+          [1,0,0,0,0,0],
+          [2,0,0,0,0,0],
+          [2,1,0,0,0,0],
+          [2,2,0,0,0,0],
+          [2,2,1,1,0,0],
+          [2,2,2,1,1,0],
+          [3,3,2,2,1,0],
+          [3,3,3,2,2,0],
+          [4,4,3,3,2,0],
+          [4,4,4,3,3,0],
+          [5,5,4,4,3,0],
+          [5,5,5,4,4,0],
+          [6,5,5,5,4,0],
+        ],
+      },
       saves: [
         {
           cutoff: 1,
@@ -465,6 +518,21 @@ export class Constants {
           index: 1,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.arcane,
+        spellsKnown: [
+          [1,0,0,0,0,0],
+          [2,0,0,0,0,0],
+          [2,1,0,0,0,0],
+          [2,2,0,0,0,0],
+          [2,2,1,0,0,0],
+          [2,2,2,0,0,0],
+          [3,2,2,1,0,0],
+          [3,3,2,2,0,0],
+          [3,3,3,2,1,0],
+          [3,3,3,3,2,0],
+        ],
+      },
       saves: [
         {
           cutoff: 1,
@@ -553,6 +621,10 @@ export class Constants {
           index: 0,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.none,
+        spellsKnown: null,
+      },
       saves: [
         {
           cutoff: 1,
@@ -645,6 +717,10 @@ export class Constants {
           index: 0,
         },
       ],
+      spells: {
+        castingType: Constants.CASTINGTYPE.none,
+        spellsKnown: null,
+      },
       saves: [
         {
           cutoff: 1,
