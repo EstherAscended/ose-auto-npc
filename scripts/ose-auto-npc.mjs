@@ -44,9 +44,10 @@ Hooks.on("getActorDirectoryEntryContext", (app, entryOptions) => {
   }
 
   if(game.user.isGM) {
-    var button = document.createElement("button");
+
+    let button = document.createElement("button");
     button.classList = ["ose-auto-npc-button"];
-    button.innerHTML = game.i18n.localize("OSEAUTONPC.npc-button");
+    button.innerHTML = "<i class='fas fa-dice'></i>" + game.i18n.localize("OSEAUTONPC.npc-button");
 
     button.addEventListener("click", function () {
       Constants.mainInput.render(true, { userId: game.userId });

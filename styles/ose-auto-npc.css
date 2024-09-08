@@ -1,0 +1,20 @@
+.nameInput {
+    width: 100%;
+}
+
+.selector {
+    margin: 0.5rem;
+}
+
+.classSelector {
+    width: 40%;
+}
+
+.levelSelector {
+    width: 20%;
+}
+
+.charCreateButton {
+    margin-top: 2rem;
+    width: 100%;
+}

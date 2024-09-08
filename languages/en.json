@@ -11,7 +11,10 @@
         "halfling": "Halfling",
         "magicuser": "Magic-User",
         "thief": "Thief",
-        "form-title": "OSE Auto NPC"
+        "form-title": "OSE Auto NPC",
+        "name": "Name",
+        "class": "Class",
+        "level": "Level"
     }
 
 }
