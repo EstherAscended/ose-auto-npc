@@ -681,7 +681,19 @@ export class Constants {
   };
 
   static initialize() {
-    this.mainInput = new OseAutoNpcInput();
+    this.classes = [];
+
+    for (const charClass in Constants.CHARCLASSES) {
+        this.classes.push(
+            {
+                name: Constants.CHARCLASSES[charClass].name,
+                localize: `OSEAUTONPC.${Constants.CHARCLASSES[charClass].name}`,
+            }
+        );
+    }
+    this.classes.sort((a,b) => a.name.localeCompare(b.name));
+
+    this.mainInput = new OseAutoNpcInput(this.classes);
   }
 }
 

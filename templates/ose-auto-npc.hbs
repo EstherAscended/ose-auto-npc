@@ -1,18 +1,26 @@
 <form class="ose-auto-npc">
     <div class="ose-auto-npc-input">
-        <input name="charName" type="text" value="NPC" placeholder="NPC" data-dtype="String">
+        <input name="charName" type="text" value="{{this.charName}}" placeholder="NPC" data-dtype="String">
 
         <select name="charClass" class="selector" data-dtype="String">
             {{#each this.charClasses}}
+            {{#if (eq this.name ../selectedClass)}}
+            <option value="{{this.name}}" selected>{{localize this.localize}}</option>
+            {{else}}
             <option value="{{this.name}}">{{localize this.localize}}</option>
+            {{/if}}
             {{/each}}
         </select>
         
         <select name="charLevel" class="selector" data-dtype="Number">
             {{#each this.levelsAvailable}}
+            {{#if (eq this ../this.selectedLevel)}}
+            <option value="{{this}}" selected>{{this}}</option>
+            {{else}}
             <option value="{{this}}">{{this}}</option>
+            {{/if}}
             {{/each}}
         </select>
-        <button type="submit" data-action="submit">Create</button>
+        <button type="submit" data-action="save">Create</button>
     </div>
 </form>

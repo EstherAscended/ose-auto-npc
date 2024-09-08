@@ -1,4 +1,4 @@
-import { Constants } from "./constants.mjs";
+import { Constants, HelperMethods } from "./constants.mjs";
 import { OseAutoNpc } from "./ose-auto-npc.mjs";
 
 export class OseAutoNpcInput extends FormApplication {
@@ -14,7 +14,8 @@ export class OseAutoNpcInput extends FormApplication {
       userId: game.userId,
       resizable: false,
       class: defaults.classes.concat(["ose-auto-npc"]),
-      closeOnSubmit: true,
+      closeOnSubmit: false,
+      submitOnChange: true,
     };
 
     const mergedOptions = foundry.utils.mergeObject(defaults, overrides);
@@ -23,31 +24,35 @@ export class OseAutoNpcInput extends FormApplication {
 
   constructor(...args) {
     super(...args);
+    this.classes = args[0];
   }
 
   async getData() {
-    let classes = [];
-    for (const charClass in Constants.CHARCLASSES) {
-        classes.push(
-            {
-                name: Constants.CHARCLASSES[charClass].name,
-                localize: `OSEAUTONPC.${Constants.CHARCLASSES[charClass].name}`,
-            }
-        );
-    }
+    //This feels like a hacky way to handle reactivity for this form but other things I've tried haven't worked
+    const selectedClass = this.form?.charClass?.value ? this.form?.charClass?.value : 'cleric'
+    const charName = this.form?.charName?.value ? this.form?.charName?.value : 'NPC';
+    const maxLevel = Constants.CHARCLASSES[selectedClass].maxLevel;
+    let selectedLevel = this.form?.charLevel?.value ? this.form?.charLevel?.value : 1;
 
-    classes.sort((a,b) => a.name.localeCompare(b.name));
+    if (selectedLevel > maxLevel) selectedLevel = maxLevel; 
+
     return {
-        charClasses: classes,
-        levelsAvailable: Array.from({ length: 14 }, (_, i) => i + 1)
+        charClasses: this.classes,
+        levelsAvailable: Array.from({ length: maxLevel }, (_, i) => i + 1),
+        selectedClass,
+        selectedLevel,
+        charName,
     }
   }
 
   activateListeners(html) {
     super.activateListeners(html);
+
+    Handlebars.registerHelper('eq', (a, b) => a == b)
+
     html.on(
       "click",
-      "[data-action='submit']",
+      "[data-action='save']",
       this._handleSendClick.bind(this)
     );
   }
@@ -62,5 +67,7 @@ export class OseAutoNpcInput extends FormApplication {
       this.form.charName.value,
       this.form.charLevel.value
     );
+
+    await this.close();
   }
 }
