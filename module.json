@@ -7,6 +7,11 @@
       "name": "Vanessa Nairn"
     }
   ],
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11",
+    "maximum": "12"
+  },
   "relationships": {
     "systems": [
       {
@@ -17,6 +22,18 @@
           "minimum": "1.8.0",
           "verified": "2.0.0"
         }
+      }
+    ],
+    "modules": [
+      {
+        "id": "classicfantasycompendium",
+        "type": "module",
+        "manifest": "https://github.com/unitedfantasytoolkit/classicfantasycompendium/releases/download/1.0.0/module.json",
+        "compatibility": {
+          "minimum": "1.0.0",
+          "verified": "1.0.0"
+        }
+
       }
     ]
   },
