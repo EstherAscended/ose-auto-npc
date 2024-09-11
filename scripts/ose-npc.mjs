@@ -128,8 +128,10 @@ export class OseNpc {
     const gear = await Gear.getGear(charClass);
 
     let spells = [];
-    for (let i = 0; i < 6; i++) {
-        if (spellDetails.spellList[i]) spells = spells.concat(spellDetails.spellList[i]);
+    if (charClass.spells.castingType !== Constants.CASTINGTYPE.none) {
+        for (let i = 0; i < 6; i++) {
+            if (spellDetails.spellList[i]) spells = spells.concat(spellDetails.spellList[i]);
+        }
     }
 
     const fullList = abilities.concat(gear).concat(spells);
